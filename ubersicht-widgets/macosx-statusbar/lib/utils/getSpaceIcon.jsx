@@ -8,6 +8,7 @@ function isMedia(windowTitle) {
 }
 
 export function getSpaceIcon(windows) {
+  // Sort windows by priority
   const sorted = windows.sort((a, b) => {
     const iconA = appIcons[a.app];
     const iconB = appIcons[b.app];
@@ -24,7 +25,13 @@ export function getSpaceIcon(windows) {
 
   if (!prioritized) return;
 
+  // Prevents sticky windows from cluttering up the bar
+  if (prioritized["is-floating"]) return;
+
+  // give empty spaces their own icon,
+  // this needs to be updated to account for minimized windows
   if (sorted.length === 0) return appIcons["empty"].icon;
+  // If a window is fullscreen we check for a configured title match and give it it's own icon
   if (sorted.length === 1 && prioritized["is-native-fullscreen"]) {
     if (isMedia(prioritized.title)) return appIcons["media"].icon;
   }
