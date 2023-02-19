@@ -43,3 +43,4 @@ yabai -m rule --add app="^Calculator$" manage=off sticky=on
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Spotify$" manage=off sticky=on
 yabai -m rule --add app="^Mullvad VPN$" manage=off sticky=on
+yabai -m rule --add app="^Home Assistant$" manage=off sticky=on
