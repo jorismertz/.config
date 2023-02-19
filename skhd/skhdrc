@@ -26,16 +26,17 @@ ctrl + cmd - q: ~/.config/scripts/yabai-display-swap
 ctrl + cmd - r: ~/.config/scripts/refreshDesktop.fish
 
 # App shortcuts
-ctrl - return: open -a kitty .
+ctrl - return: ~/.config/scripts/open-term.fish
 ctrl + cmd - s: open -a Spotify
 ctrl + cmd - b: open -a "Brave Browser"
 ctrl + cmd - c: open -b com.microsoft.VSCode
+ctrl + cmd - p: open -a 1Password
 
 ctrl + alt - d: yabai -m space --destroy; ~/.config/scripts/refreshUbersichtWidgets.fish
 ctrl + alt - c: yabai -m space --create; ~/.config/scripts/refreshUbersichtWidgets.fish; yabai -m space --focus last
 
 # Toggle only float of window, no other fancy trickery with this one.
-ctrl + cmd - l: yabai -m window --toggle float
+ctrl + alt - l: yabai -m window --toggle float
 
 # Connect / Disconnect Airpods
 ctrl + cmd - a: ~/.config/scripts/toggle-airpods-connection.fish
@@ -49,7 +50,7 @@ ctrl + lshift + alt - right: yabai -m window --swap east
 ctrl + lshift + alt - up: yabai -m window --swap north
 ctrl + lshift + alt - down: yabai -m window --swap south
 
-# Fullscreen and float window
+# Float window in middle of screen
 ctrl + alt - m: ~/.config/scripts/yabai-better-float/toggle-window-float.fish
 
 # Split window
@@ -59,19 +60,19 @@ ctrl + alt - s: yabai -m window --toggle split
 ctrl + alt - b: yabai -m space --balance
 
 # Switch workspace
-lalt - 1: yabai -m space --focus 1
-lalt - 2: yabai -m space --focus 2
-lalt - 3: yabai -m space --focus 3
-lalt - 4: yabai -m space --focus 4
-lalt - 5: yabai -m space --focus 5
-lalt - 6: yabai -m space --focus 6
-lalt - 7: yabai -m space --focus 7
-lalt - 8: yabai -m space --focus 8
-lalt - 9: yabai -m space --focus 9
+lctrl - 1: yabai -m space --focus 1
+lctrl - 2: yabai -m space --focus 2
+lctrl - 3: yabai -m space --focus 3
+lctrl - 4: yabai -m space --focus 4
+lctrl - 5: yabai -m space --focus 5
+lctrl - 6: yabai -m space --focus 6
+lctrl - 7: yabai -m space --focus 7
+lctrl - 8: yabai -m space --focus 8
+lctrl - 9: yabai -m space --focus 9
 
 # Switch workspace < - >
-ctrl - left: yabai -m space --focus prev || yabai -m space --focus last
-ctrl - right: yabai -m space --focus next || yabai -m space --focus first
+lctrl - left: yabai -m space --focus prev || yabai -m space --focus last
+lctrl - right: yabai -m space --focus next || yabai -m space --focus first
 
 # Send window to display ( replaced with send window to space )
 # ctrl + alt - 1: yabai -m window --display 1 && yabai -m display --focus 1
@@ -89,8 +90,8 @@ ctrl + alt - 8: yabai -m window --space 8 && yabai -m space --focus 8
 ctrl + alt - 9: yabai -m window --space 9 && yabai -m space --focus 9
 
 # Focus window
-ctrl + lshift - left: yabai -m window --focus west || yabai -m display --focus 1
-ctrl + lshift - right: yabai -m window --focus east || yabai -m display --focus 2
+ctrl + lshift - left: yabai -m window --focus west || yabai -m display --focus 2
+ctrl + lshift - right: yabai -m window --focus east || yabai -m display --focus 1
 ctrl + lshift - up: yabai -m window --focus north
 ctrl + lshift - down: yabai -m window --focus south
 
@@ -102,7 +103,7 @@ ralt - l: ~/.config/scripts/disablegap.fish
 # ralt - l: sh ~/.config/scripts/autoGapAdjust.sh
 
 # Warp window to direction
-ctrl + cmd - left: yabai -m window --warp west
-ctrl + cmd - right: yabai -m window --warp east
+ctrl + cmd - left: yabai -m window --warp west || yabai -m window --display 2
+ctrl + cmd - right: yabai -m window --warp east || yabai -m window --display 1
 ctrl + cmd - up: yabai -m window --warp north
 ctrl + cmd - down: yabai -m window --warp south
