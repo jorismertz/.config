@@ -36,9 +36,10 @@ yabai -m rule --add app="^Logi Options$" manage=off
 yabai -m rule --add app="^Disk Utility$" manage=off
 yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
-yabai -m rule --add app="^NordPass$" manage=off
+yabai -m rule --add app="^1Password$" manage=off sticky=on
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
-yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off sticky=on
 yabai -m rule --add app="^Archive Utility$" manage=off
-yabai -m rule --app app="^Spotify$" manage=off sticky=on
+yabai -m rule --add app="^Spotify$" manage=off sticky=on
+yabai -m rule --add app="^Mullvad VPN$" manage=off sticky=on
