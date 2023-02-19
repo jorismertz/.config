@@ -1,0 +1,12 @@
+.DS_Store
+.gitconfig
+
+micro/buffers/
+micro/backups/
+spicetify/
+configstore/
+github-copilot/
+planetscale/
+sanity/
+install/
+fish/functions/remote.fish

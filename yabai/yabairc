@@ -1,0 +1,44 @@
+#!/usr/bin/env sh
+
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# Change gap size when display is added or removed
+# yabai -m signal --add event=display_added action="sh ~/.config/scripts/autoGapAdjust.sh"
+# yabai -m signal --add event=display_removed action="sh ~/.config/scripts/autoGapAdjust.sh"
+
+yabai -m signal --add event=space_changed action="~/.config/scripts/refreshUbersichtWidgets.fish"
+
+# if using multple displays, add an additional rule for "display_changed" event
+yabai -m signal --add event=display_changed action="~/.config/scripts/refreshUbersichtWidgets.fish"
+
+# global settings
+yabai -m config window_origin_display default
+yabai -m config window_placement second_child
+yabai -m config active_window_border_color 0xCCeb6f92
+yabai -m config normal_window_border_color 0x00eb6f92
+yabai -m config window_border_width 2
+yabai -m config window_shadow off
+yabai -m config window_border_hidpi on
+yabai -m config window_border on
+yabai -m config split_type auto
+yabai -m config auto_balance off
+yabai -m config layout bsp
+yabai -m config external_bar all:0:40
+
+# Reapplies last gap setting.
+~/.config/scripts/reapplyGap.fish 
+
+# Window preferences
+yabai -m rule --add app="^Pika$" manage=off sticky=on 
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Logi Options$" manage=off
+yabai -m rule --add app="^Disk Utility$" manage=off
+yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^NordPass$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^App Store$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Archive Utility$" manage=off
+yabai -m rule --app app="^Spotify$" manage=off sticky=on
