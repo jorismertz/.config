@@ -13,7 +13,7 @@ alias rmf "rm -rf"
 alias nvm "bass source /opt/homebrew/Cellar/nvm/0.39.3/nvm.sh --no-use ';' nvm"
 alias s "kitty +kitten ssh"
 alias vim nvim
-alias cz z
+alias cs z
 
 # Quick project folder fuzzy finder shortcut
 bind \cs 'cd ~/projects/$(/opt/homebrew/bin/fd --type directory --no-ignore --exclude node_modules --max-depth 14 --base-directory ~/projects/ | /opt/homebrew/bin/fzf); commandline -f repaint'
