@@ -20,3 +20,5 @@ vim.opt.scrolloff = 12
 vim.cmd(":hi LineNr guibg=none guifg=#56526e")
 vim.cmd(":hi NonText guifg=bg")
 
+vim.cmd("au TextYankPost * silent! lua vim.highlight.on_yank()")
+vim.cmd("set clipboard=unnamedplus")

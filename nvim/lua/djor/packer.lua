@@ -3,6 +3,7 @@ vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
+    use 'mg979/vim-visual-multi'
     use 'github/copilot.vim'
     use {
       'nvim-lualine/lualine.nvim',
