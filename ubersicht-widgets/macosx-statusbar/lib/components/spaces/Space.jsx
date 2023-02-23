@@ -14,6 +14,8 @@ const SpaceComponent = ({ space, monitorAmount, windows }) => {
   const isFullscreen = space["is-native-fullscreen"];
   const isVisible = space["is-visible"];
 
+  const hasIcon = icon !== undefined;
+
   return (
     <section
       style={{
@@ -38,7 +40,7 @@ const SpaceComponent = ({ space, monitorAmount, windows }) => {
           {icon || space.index}
         </p>
       </div>
-      <p className="space-index">{space.index}</p>
+      <p className="space-index">{hasIcon ? space.index : ""}</p>
       <div
         style={{
           display: isFullscreen && isCorrectDisplay ? "block" : "none",
