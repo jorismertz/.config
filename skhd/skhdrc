@@ -81,7 +81,7 @@ ctrl + alt - g: yabai -m window --grid 10:10:1:1:8:8
 ctrl + alt - t: yabai -m space --rotate 180
 
 # Swap monitors
-ctrl + cmd - q: ~/.config/scripts/path/yabai-helper display-swap
+ctrl + cmd - q: ~/.config/scripts/yabai-helper display-swap
 
 # Connect / Disconnect Airpods
 ctrl + cmd - a: ~/.config/scripts/toggle-airpods-connection.fish
