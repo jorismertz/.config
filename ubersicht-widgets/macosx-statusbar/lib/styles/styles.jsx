@@ -44,7 +44,7 @@ const styles = `
 
 .label {
   font-weight: 700;
-  
+
 }
 
 .space-index {
@@ -52,6 +52,11 @@ const styles = `
   color: ${colors.Text};
   font-size: 10px;
   top: -5px;
+}
+
+.space-index.notif-badge {
+  right: -2px;
+  font-size: 12px
 }
 
 * {
@@ -104,6 +109,10 @@ const styles = `
     gap: ${gapSize};
     align-items: center;
   }
+
+  .space-component.visible-space {
+    background: ${colors.widgetBackground};
+  } 
 
   .space-component {
     font-size: 1rem;

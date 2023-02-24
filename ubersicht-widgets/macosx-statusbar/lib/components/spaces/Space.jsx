@@ -24,11 +24,10 @@ const SpaceComponent = ({ space, monitorAmount, windows }) => {
       }}
     >
       <div
-        className="space-component"
+        className={`space-component ${isVisible ? "visible-space" : ""}`}
         onContextMenu={() => destroySpace(space.index)}
         onClick={() => focusSpace(space.index)}
         style={{
-          background: isVisible ? colors.HighlightHigh : "rgba( 60, 60, 60, 0)",
           display: isCorrectDisplay ? "grid" : "none",
         }}
       >
