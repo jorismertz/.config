@@ -45,7 +45,8 @@ ctrl + shift - f: yabai -m space --focus 8
 # App shortcuts
 ctrl + cmd - c: ~/.config/scripts/open-term.fish
 ctrl + cmd - e: open -b com.microsoft.VSCode
-ctrl + cmd - d: open -a "Home Assistant"
+ctrl + cmd - d: open -a "Home" # "Home Assistant"
+ctrl + cmd + alt - d: open -a "Home Assistant"
 ctrl + cmd - w: open -a "Brave Browser"
 ctrl + cmd - 1: open -a "1Password"
 ctrl + cmd - s: open -a "Spotify"
