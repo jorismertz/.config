@@ -1,1 +1,0 @@
-/Users/jorismertz/.config/scripts/ubersicht_data.fish
