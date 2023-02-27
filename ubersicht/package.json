@@ -1,0 +1,19 @@
+{
+  "name": "ts-uebersicht",
+  "scripts": {
+    "dev": "rm -rf dist/; npx tsc --watch",
+    "build": "rm -rf dist/; npx tsc",
+    "lint": "npx tsc --noEmit",
+    "format": "npx prettier --write 'src/**/*.{ts,tsx}'",
+    "generate-test-data": "./src/macosx-statusbar/lib/utils/data.fish > ./src/macosx-statusbar/tests/data.json",
+    "test": "pnpm generate-test-data; npx vitest watch",
+    "check": "pnpm lint && npx vitest run"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "@types/react": "^18.0.28",
+    "prettier": "^2.8.4",
+    "vitest": "^0.29.1",
+    "zod": "^3.20.6"
+  }
+}
