@@ -16,15 +16,15 @@ set windowQuery $(/opt/homebrew/bin/yabai -m query --windows)
 set spacesQuery $(/opt/homebrew/bin/yabai -m query --spaces)
 set displayQuery $(/opt/homebrew/bin/yabai -m query --displays)
 
-echo '{'                                  \
-        '"spacesQuery": ' $spacesQuery ,  \
-        '"windowsQuery": ' $windowQuery , \
-        '"displayQuery": ' $displayQuery , \
-        '"systemInfoQuery": {'            \
-            '"cpu": '$cpuUsage ,          \
-            '"mem": '$memoryUsage ,       \
-            '"disk": "'$diskUsage'"'      \
-        '},'                              \
-        '"ssid": "'$ssid'",'               \
+echo '{'                                        \
+        '"spacesQuery": ' $spacesQuery ,        \
+        '"windowsQuery": ' $windowQuery ,       \
+        '"displayQuery": ' $displayQuery ,      \
+        '"systemInfoQuery": {'                  \
+            '"cpu": '$cpuUsage ,                \
+            '"mem": '$memoryUsage ,             \
+            '"disk": "'$diskUsage'"'            \
+        '},'                                    \
+        '"ssid": "'$ssid'",'                    \
         '"wallpaper_path": "'$wallpaper_path'"' \
      '}'
