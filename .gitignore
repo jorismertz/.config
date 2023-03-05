@@ -8,5 +8,6 @@ configstore/
 github-copilot/
 planetscale/
 sanity/
-install/
+# install/
+Brewfile.lock.json
 fish/functions/remote.fish
