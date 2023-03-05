@@ -1,26 +1,38 @@
 import { focusSpace, destroySpace } from "../../utils/yabai.jsx";
 import { getSpaceIcon } from "../../utils/getSpaceIcon.jsx";
 import { flipDisplayLayout } from "../../config.jsx";
-
-import { Space } from "../../types.js";
+import { Space, Display } from "../../types.js";
+import { overrideFlipUuid } from "../../config.jsx";
 
 interface Props {
-  space: Space;
+  displayQuery: Display[];
   monitorAmount: number;
-  // windows: (Window | undefined)[];
-  windows: any;
   key: number | string;
+  windows: any;
+  space: Space;
 }
 
-const SpaceComponent = ({ space, monitorAmount, windows }: Props) => {
+const SpaceComponent = ({
+  space,
+  monitorAmount,
+  windows,
+  displayQuery,
+}: Props) => {
   let screenIndex = parseInt(window.location.pathname.split("/")[1]);
   if (monitorAmount > 1) screenIndex = monitorAmount + 1 - screenIndex;
 
+  const overrideFlip = displayQuery.some((display) => {
+    return display.uuid === overrideFlipUuid;
+  });
+
   const icon = getSpaceIcon(windows);
 
-  const isCorrectDisplay = flipDisplayLayout
+  let isCorrectDisplay = flipDisplayLayout
     ? space.display !== screenIndex
     : space.display === screenIndex;
+
+  if (overrideFlip) isCorrectDisplay = !isCorrectDisplay;
+
   const isFullscreen = space["is-native-fullscreen"];
   const isVisible = space["is-visible"];
 

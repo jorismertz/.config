@@ -49,3 +49,4 @@ yabai -m rule --add app="^Finder$" manage=off sticky=on
 yabai -m rule --add app="^WhatsApp$" manage=off sticky=on
 yabai -m rule --add app="^Messages$" manage=off sticky=on
 yabai -m rule --add app="^SF Symbols$" manage=off sticky=on
+yabai -m rule --add app="^Logi Options+$" manage=off sticky=on

@@ -81,6 +81,8 @@ ctrl + alt - g: yabai -m window --grid 10:10:1:1:8:8
 # Mirror space vertically
 ctrl + alt - t: yabai -m space --rotate 180
 
+ctrl + cmd - r: ~/.config/scripts/refreshDesktop.fish
+
 # Swap monitors
 ctrl + cmd - q: ~/.config/scripts/yabai-helper display-swap
 

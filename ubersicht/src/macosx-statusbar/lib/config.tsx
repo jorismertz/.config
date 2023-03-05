@@ -7,6 +7,10 @@ export const showCreateSpace = false; // Show create space button
 
 export const flipDisplayLayout = false; // If arrangement of displays is incorrect try flipping this
 
+// If a display with this uuid is detected the display layout will be flipped
+// This is usefull if you use multiple setups
+export const overrideFlipUuid = "82F30977-0293-4DA4-8BE8-E78B1E827592";
+
 // These sites will trigger a special icon for entertainment windows
 export const mediaSites = [
   "youtube",

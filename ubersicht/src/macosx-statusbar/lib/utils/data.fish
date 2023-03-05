@@ -10,17 +10,21 @@ set memoryUsage $systemInfo[2]
 set diskUsage $($diskspace -Hi)
 set internetStatus $(curl -s -o /dev/null -w "%{http_code}" https://www.google.com)
 set ssid  $(/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -I | awk -F: '/ SSID/{print $2}')
+set wallpaper_path $(osascript -e 'tell app "finder" to get posix path of (get desktop picture as alias)')
 
 set windowQuery $(/opt/homebrew/bin/yabai -m query --windows)
 set spacesQuery $(/opt/homebrew/bin/yabai -m query --spaces)
+set displayQuery $(/opt/homebrew/bin/yabai -m query --displays)
 
 echo '{'                                  \
         '"spacesQuery": ' $spacesQuery ,  \
         '"windowsQuery": ' $windowQuery , \
+        '"displayQuery": ' $displayQuery , \
         '"systemInfoQuery": {'            \
             '"cpu": '$cpuUsage ,          \
             '"mem": '$memoryUsage ,       \
             '"disk": "'$diskUsage'"'      \
         '},'                              \
-        '"ssid": "'$ssid'"'               \
+        '"ssid": "'$ssid'",'               \
+        '"wallpaper_path": "'$wallpaper_path'"' \
      '}'

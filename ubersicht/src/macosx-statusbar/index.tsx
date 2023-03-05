@@ -14,7 +14,8 @@ const refreshInSeconds = 30;
 export const className = css`
   ${styles}
 `;
-export const command = "~/.config/scripts/ubersicht_data.fish";
+export const command =
+  "~/.config/ubersicht/src/macosx-statusbar/lib/utils/data.fish";
 export const refreshFrequency = 1000 * refreshInSeconds;
 
 interface Props {
@@ -24,13 +25,14 @@ interface Props {
 export const render = ({ output }: Props) => {
   // prevent default error popup from showing up with try catch
   try {
-    const { spacesQuery, systemInfoQuery, windowsQuery } = JSON.parse(
-      output
-    ) as OutputData;
+    const { spacesQuery, systemInfoQuery, windowsQuery, displayQuery } =
+      JSON.parse(output) as OutputData;
+
+    console.log(JSON.parse(output));
 
     return (
       <div className="widgets-wrapper">
-        <Spaces data={{ spacesQuery, windowsQuery }} />
+        <Spaces data={{ spacesQuery, windowsQuery, displayQuery }} />
         <Notifications />
         <SystemInfo data={systemInfoQuery} />
       </div>

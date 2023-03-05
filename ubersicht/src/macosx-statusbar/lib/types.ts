@@ -81,6 +81,7 @@ export interface Window {
 export interface SpacesProps {
   spacesQuery: Space[];
   windowsQuery: Window[];
+  displayQuery: Display[];
 }
 
 export interface SystemInfoQueryProps {

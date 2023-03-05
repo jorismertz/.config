@@ -10,12 +10,14 @@ const data = fs.readFileSync(
 const dataSchema = z.object({
   spacesQuery: z.array(z.object({})),
   windowsQuery: z.array(z.object({})),
+  displayQuery: z.array(z.object({})),
   systemInfoQuery: z.object({
     cpu: z.number(),
     mem: z.number(),
     disk: z.string(),
   }),
   ssid: z.string(),
+  wallpaper_path: z.string(),
 });
 
 describe("Data provided by shell", () => {

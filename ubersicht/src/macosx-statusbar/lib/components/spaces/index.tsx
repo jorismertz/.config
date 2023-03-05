@@ -11,7 +11,7 @@ interface Props {
 }
 
 const Spaces = ({ data }: Props) => {
-  const { spacesQuery, windowsQuery } = data;
+  const { spacesQuery, windowsQuery, displayQuery } = data;
 
   // This saves us from having to run another yabai query.
   function getMonitorAmount() {
@@ -35,6 +35,7 @@ const Spaces = ({ data }: Props) => {
             key={index}
             monitorAmount={monitorAmount}
             windows={windowInfo}
+            displayQuery={displayQuery}
           />
         );
       })}
