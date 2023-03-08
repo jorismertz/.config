@@ -43,10 +43,12 @@ yabai -m rule --add app="^Calculator$" manage=off sticky=on
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Spotify$" manage=off sticky=on
 yabai -m rule --add app="^Mullvad VPN$" manage=off sticky=on
-yabai -m rule --add app="^Home Assistant$" manage=off sticky=on
+yabai -m rule --add app="^Home Assistant$" manage=off sticky=off
 yabai -m rule --add app="^Home$" manage=off sticky=on
 yabai -m rule --add app="^Finder$" manage=off sticky=on
-yabai -m rule --add app="^WhatsApp$" manage=off sticky=on
-yabai -m rule --add app="^Messages$" manage=off sticky=on
-yabai -m rule --add app="^SF Symbols$" manage=off sticky=on
-yabai -m rule --add app="^Logi Options+$" manage=off sticky=on
+yabai -m rule --add app="^WhatsApp$" manage=off sticky=off
+yabai -m rule --add app="^Messages$" manage=off sticky=off
+yabai -m rule --add app="^SF Symbols$" manage=off sticky=off
+yabai -m rule --add app="^Logi Options+$" manage=off sticky=off
+yabai -m rule --add app="^Adobe(.*)" manage=off sticky=off
+

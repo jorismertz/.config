@@ -23,7 +23,7 @@ bind \ca 'cd $(/opt/homebrew/bin/fd --type directory --hidden --exclude node_mod
 zoxide init fish | source
 
 # Macos keeps resetting my wallpaper so this will do for now.
-# osascript -e 'tell application "System Events" to tell every desktop to set picture to "/Users/jorismertz/wallpapers/vibrant-monterey.tiff"'
+osascript -e 'tell application "System Events" to tell every desktop to set picture to "/Users/jorismertz/wallpapers/grid_magenta.png"'
 
 # pnpm
 set -gx PNPM_HOME /Users/jorismertz/Library/pnpm

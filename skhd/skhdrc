@@ -64,7 +64,7 @@ ralt - l: ~/.config/scripts/disablegap.fish
 
 # Create / Destroy space
 ctrl + alt - x: yabai -m space --destroy; ~/.config/scripts/refreshUbersichtWidgets.fish
-ctrl + alt - c: yabai -m space --create; ~/.config/scripts/refreshUbersichtWidgets.fish; yabai -m space --focus last
+ctrl + alt - c: yabai -m space --create; yabai -m space --focus $(yabai -m query --displays --display | jq ".spaces | last"); ~/.config/scripts/refreshUbersichtWidgets.fish
 
 # Toggle only float of window, no other fancy trickery with this one.
 ctrl + alt - b: yabai -m window --toggle float
