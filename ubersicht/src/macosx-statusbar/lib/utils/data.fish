@@ -5,6 +5,7 @@ set diskspace /usr/local/bin/diskspace
 
 set systemInfo $(string split " " $(ps -A -o %cpu,%mem | awk '{ cpu += $1; mem += $2} END {print cpu , mem}'))
 set cpuUsage $(top -l 1 | grep -E "^CPU" | grep -Eo '[^[:space:]]+%' | head -1 | sed s/\%/\/)
+set batteryPercentage $(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)
 
 set memoryUsage $systemInfo[2]
 set diskUsage $($diskspace -Hi)
@@ -21,6 +22,7 @@ echo '{'                                        \
         '"windowsQuery": ' $windowQuery ,       \
         '"displayQuery": ' $displayQuery ,      \
         '"systemInfoQuery": {'                  \
+            '"battery": '$batteryPercentage','  \
             '"cpu": '$cpuUsage ,                \
             '"mem": '$memoryUsage ,             \
             '"disk": "'$diskUsage'"'            \

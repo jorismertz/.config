@@ -11,19 +11,35 @@ const SpotifyData = z.object({
 
 type SpotifyData = z.infer<typeof SpotifyData>;
 
-export default function Spotify() {
+export default function Spotify({ trigger }: { trigger: any }) {
   const [data, setData] = React.useState<SpotifyData | null>(null);
 
+  // Load stored data to decrease loading time of widget
   React.useEffect(() => {
+    if (data) return;
+    const stored = window.localStorage.getItem("spotify");
+    if (stored) {
+      const parsed = SpotifyData.safeParse(JSON.parse(stored));
+      if (parsed.success) {
+        setData(parsed.data);
+      }
+    }
+  }, [window]);
+
+  React.useEffect(() => {
+    console.log("Fetching spotify data");
     run(
       "~/.config/ubersicht/src/macosx-statusbar/lib/utils/getSpotify.fish"
     ).then((output) => {
       const parsed = SpotifyData.safeParse(JSON.parse(output));
       if (parsed.success) {
         setData(parsed.data);
+        window.localStorage.setItem("spotify", JSON.stringify(parsed.data));
       }
     });
-  }, []);
+  }, [trigger]);
+
+  if (!data) return null;
 
   return (
     <div className="widget-component">

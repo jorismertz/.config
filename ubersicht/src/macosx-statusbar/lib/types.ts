@@ -88,6 +88,7 @@ export interface SystemInfoQueryProps {
   cpu: number;
   mem: number;
   disk: string;
+  battery: number;
 }
 
 export interface OutputData extends SpacesProps {

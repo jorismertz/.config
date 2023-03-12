@@ -12,6 +12,7 @@ const dataSchema = z.object({
   windowsQuery: z.array(z.object({})),
   displayQuery: z.array(z.object({})),
   systemInfoQuery: z.object({
+    battery: z.number(),
     cpu: z.number(),
     mem: z.number(),
     disk: z.string(),

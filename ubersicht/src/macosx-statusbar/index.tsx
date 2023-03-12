@@ -35,8 +35,8 @@ export const render = ({ output }: Props) => {
       <div className="widgets-wrapper">
         <Spaces data={{ spacesQuery, windowsQuery, displayQuery }} />
         <Notifications />
+        <Spotify trigger={spacesQuery} />
         <SystemInfo data={systemInfoQuery} />
-        <Spotify />
       </div>
     );
   } catch (err) {
