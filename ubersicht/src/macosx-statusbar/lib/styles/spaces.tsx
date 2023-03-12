@@ -37,6 +37,7 @@ export const spaceStyles = `
     color: ${colors.Text};
     font-size: 10px;
     top: -5px;
+    display: ${config.spaces.showSpaceIndex ? "block" : "none"};
   }
   
   .space-index.notif-badge {
