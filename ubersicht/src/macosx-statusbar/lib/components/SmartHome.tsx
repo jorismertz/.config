@@ -8,7 +8,7 @@ interface SceneComponentProps {
   key: string;
 }
 
-const SceneComponent = ({ color, name, key }: SceneComponentProps) => {
+const SceneComponent = ({ color, name }: SceneComponentProps) => {
   return (
     <div
       className="smarthome-scene"

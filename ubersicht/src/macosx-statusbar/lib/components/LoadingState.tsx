@@ -1,9 +1,3 @@
-import type { ReactNode } from "react";
-
-interface Props {
-  children?: ReactNode;
-}
-
 function LoadingBlock({ size }: { size: number }) {
   return (
     <section
@@ -15,7 +9,7 @@ function LoadingBlock({ size }: { size: number }) {
   );
 }
 
-export default function LoadingState({ children }: Props) {
+export default function LoadingState() {
   return (
     <div className="widgets-wrapper">
       <section className="spaces-widget-wrapper">

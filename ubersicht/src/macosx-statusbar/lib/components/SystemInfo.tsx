@@ -1,5 +1,4 @@
-import { React } from "uebersicht";
-import { gapSize } from "../styles/styles.jsx";
+import { gapSize } from "../styles/variables.jsx";
 import type { SystemInfoQueryProps } from "../types.js";
 
 interface Props {
