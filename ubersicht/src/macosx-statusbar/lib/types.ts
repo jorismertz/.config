@@ -95,3 +95,14 @@ export interface OutputData extends SpacesProps {
   systemInfoQuery: SystemInfoQueryProps;
   ssid: string;
 }
+
+export interface Config {
+  useLightText: boolean;
+  homeSsid: string;
+  showCreateSpace: boolean;
+  flipDisplayIndexes: boolean;
+  overrideFlipDisplayIndexes: string[];
+  mediaSiteNames: string[];
+  prioritizedApps: string[];
+  appIcons: Record<string, { icon: string; priority: number }>;
+}

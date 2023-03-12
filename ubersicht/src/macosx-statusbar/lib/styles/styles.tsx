@@ -1,4 +1,4 @@
-import { lightText } from "../config.jsx";
+import config from "../config.jsx";
 export const filter = "blur(5rem) saturate(2)";
 export const height = "1.5rem";
 export const gapSize = ".5rem";
@@ -25,7 +25,7 @@ const getColors = () => {
   };
   return {
     ...obj,
-    Text: lightText ? obj.White : obj.Base,
+    Text: config.useLightText ? obj.White : obj.Base,
   };
 };
 

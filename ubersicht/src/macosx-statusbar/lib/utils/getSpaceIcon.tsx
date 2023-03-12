@@ -1,5 +1,6 @@
-import { appIcons, mediaSites } from "../config.jsx";
+import config from "../config.jsx";
 import { Window } from "../types.js";
+const { mediaSiteNames: mediaSites, appIcons } = config;
 
 function isMedia(windowTitle: string) {
   const result = mediaSites.map((site) => {
