@@ -18,6 +18,13 @@ const dataSchema = z.object({
   }),
   ssid: z.string(),
   wallpaper_path: z.string(),
+  spotify: z.object({
+    status: z.string(),
+    artist: z.string(),
+    album: z.string(),
+    track: z.string(),
+    position: z.array(z.string()),
+  }),
 });
 
 describe("Data provided by shell", () => {

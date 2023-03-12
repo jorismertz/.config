@@ -6,6 +6,7 @@ import SystemInfo from "./lib/components/SystemInfo.jsx";
 import type { OutputData } from "./lib/types.js";
 import catchParseError from "./lib/utils/catchParseError.jsx";
 import Notifications from "./lib/components/Notifications.jsx";
+import Spotify from "./lib/components/Spotify.jsx";
 //import SmartHome from "./lib/components/SmartHome;
 
 import LoadingState from "./lib/components/LoadingState.jsx";
@@ -35,6 +36,7 @@ export const render = ({ output }: Props) => {
         <Spaces data={{ spacesQuery, windowsQuery, displayQuery }} />
         <Notifications />
         <SystemInfo data={systemInfoQuery} />
+        <Spotify />
       </div>
     );
   } catch (err) {
