@@ -96,14 +96,35 @@ export interface OutputData extends SpacesProps {
   ssid: string;
 }
 
-export interface Config {
-  useLightText: boolean;
-  homeSsid: string;
+type TextColorOptions = "light" | "dark";
+
+interface DisplayConfig {
+  flipIndexes: boolean;
+  overrideFlipUUIDs: string[];
+}
+
+interface ColorsConfig {
+  textColor: TextColorOptions;
+}
+
+interface SpacesConfig {
+  showCreateButton: boolean;
+  showSpaceIndex: boolean;
+  icons: {
+    mediaSiteNames: string[];
+    prioritizedApps: string[];
+    appIcons: Record<string, { icon: string; priority: number }>;
+  };
+}
+
+interface GeneralConfig {
+  homeSSID: string;
   flipStatusBarOrder: boolean;
-  showCreateSpace: boolean;
-  flipDisplayIndexes: boolean;
-  overrideFlipDisplayIndexes: string[];
-  mediaSiteNames: string[];
-  prioritizedApps: string[];
-  appIcons: Record<string, { icon: string; priority: number }>;
+}
+
+export interface Config {
+  general: GeneralConfig;
+  colors: ColorsConfig;
+  spaces: SpacesConfig;
+  display: DisplayConfig;
 }

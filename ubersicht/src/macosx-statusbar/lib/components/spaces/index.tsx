@@ -1,6 +1,5 @@
 import { mapWindowsToSpaces } from "../../utils/mapWindowsToSpaces.jsx";
-import config from "../../config.jsx";
-import { React } from "uebersicht";
+import { config } from "../../config.jsx";
 
 import SpaceComponent from "./Space.jsx";
 import CreateSpace from "./CreateSpace.jsx";
@@ -39,7 +38,9 @@ const Spaces = ({ data }: Props) => {
           />
         );
       })}
-      {config.showCreateSpace && <CreateSpace monitorAmount={monitorAmount} />}
+      {config.spaces.showCreateButton && (
+        <CreateSpace monitorAmount={monitorAmount} />
+      )}
     </section>
   );
 };

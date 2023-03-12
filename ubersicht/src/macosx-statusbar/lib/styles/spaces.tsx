@@ -1,5 +1,5 @@
 import { borderRadius, colors, gapSize, height } from "./variables.jsx";
-import config from "../config.jsx";
+import { config } from "../config.jsx";
 
 export const spaceStyles = `
   .space-component {
@@ -21,7 +21,9 @@ export const spaceStyles = `
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: ${config.flipStatusBarOrder ? "flex-end" : "flex-start"};
+    justify-content: ${
+      config.general.flipStatusBarOrder ? "flex-end" : "flex-start"
+    };
     align-items: center;
     width: 100%;
     height: 100%;

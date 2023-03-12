@@ -1,4 +1,4 @@
-import config from "../config.jsx";
+import { config } from "../config.jsx";
 import { borderRadius, colors, filter, gapSize } from "./variables.jsx";
 
 export const widgetStyles = `
@@ -32,7 +32,9 @@ export const widgetStyles = `
     bottom: 0;
     display: flex;
     height: 40px;
-    flex-direction: ${config.flipStatusBarOrder ? "row-reverse" : "row"};
+    flex-direction: ${
+      config.general.flipStatusBarOrder ? "row-reverse" : "row"
+    };
     justify-content: space-between;
     gap: ${gapSize};
     padding: 7px;

@@ -1,7 +1,7 @@
 import { focusSpace, destroySpace } from "../../utils/yabai.jsx";
 import { getSpaceIcon } from "../../utils/getSpaceIcon.jsx";
 import { Space, Display } from "../../types.js";
-import config from "../../config.jsx";
+import { config } from "../../config.jsx";
 
 interface Props {
   displayQuery: Display[];
@@ -21,12 +21,12 @@ const SpaceComponent = ({
   if (monitorAmount > 1) screenIndex = monitorAmount + 1 - screenIndex;
 
   const overrideFlip = displayQuery.some((display) => {
-    return config.overrideFlipDisplayIndexes.includes(display.uuid);
+    return config.display.overrideFlipUUIDs.includes(display.uuid);
   });
 
   const icon = getSpaceIcon(windows);
 
-  let isCorrectDisplay = config.flipDisplayIndexes
+  let isCorrectDisplay = config.display.flipIndexes
     ? space.display !== screenIndex
     : space.display === screenIndex;
 

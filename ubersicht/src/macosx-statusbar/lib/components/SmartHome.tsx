@@ -1,5 +1,5 @@
 import { toggleLights, activateScene } from "../utils/homeAssistant.jsx";
-import config from "../config.jsx";
+import { config } from "../config.jsx";
 import { React } from "uebersicht";
 
 interface SceneComponentProps {
@@ -35,7 +35,7 @@ export default function SmartHome({ data }: { data: string }) {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [lightsOn, setLightsOn] = React.useState(false);
 
-  if (data.trim() !== config.homeSsid) return null;
+  if (data.trim() !== config.general.homeSSID) return null;
 
   React.useEffect(() => {
     if (menuOpen) {
