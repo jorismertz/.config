@@ -42,14 +42,8 @@ export default function Spotify({ trigger }: { trigger: any }) {
   if (!data) return null;
 
   return (
-    <div className="widget-component">
-      <p
-        style={{
-          width: "max-content",
-        }}
-      >
-        {data?.track}
-      </p>
+    <div className="widget-component spotify-widget">
+      <p>{data?.track}</p>
     </div>
   );
 }

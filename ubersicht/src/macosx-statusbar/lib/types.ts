@@ -99,6 +99,7 @@ export interface OutputData extends SpacesProps {
 export interface Config {
   useLightText: boolean;
   homeSsid: string;
+  flipStatusBarOrder: boolean;
   showCreateSpace: boolean;
   flipDisplayIndexes: boolean;
   overrideFlipDisplayIndexes: string[];

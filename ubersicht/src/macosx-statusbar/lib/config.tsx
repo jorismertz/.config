@@ -3,6 +3,8 @@ import type { Config } from "./types";
 const config: Config = {
   // Whether to use white or black text.
   useLightText: true,
+  // ...
+  flipStatusBarOrder: true,
   // Some widgets can use this to determine whether you're connected to your home network
   homeSsid: "Kieffie",
   // Show + button to create a new space

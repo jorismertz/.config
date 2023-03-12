@@ -42,6 +42,17 @@ const styles = `
   animation: status-indicator 3s linear;
 }
 
+.spotify-widget > p {
+  width: 12ch;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.spotify-widget:hover > p {
+  width: max-content;
+}
+
 .label {
   font-weight: 700;
 }
@@ -93,7 +104,7 @@ const styles = `
     bottom: 0;
     display: flex;
     height: 40px;
-    flexc-direction: row;
+    flex-direction: ${config.flipStatusBarOrder ? "row-reverse" : "row"};
     justify-content: space-between;
     gap: ${gapSize};
     padding: 7px;
@@ -104,6 +115,7 @@ const styles = `
     position: relative;
     display: flex;
     flex-direction: row;
+    justify-content: ${config.flipStatusBarOrder ? "flex-end" : "flex-start"};
     align-items: center;
     width: 100%;
     height: 100%;
